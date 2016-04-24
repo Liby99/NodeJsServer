@@ -1,0 +1,73 @@
+<html>
+    <head>
+        
+    </head>
+    <body>
+        <button onclick="getTimeSpan()">Get Time Span</button>
+        <button onclick="setSession()">Set Session</button>
+        <button onclick="resetSession()">Reset Session</button>
+        <button onclick="getSession()">Get Session</button>
+        <form action="/ajax/handler?action=file_upload" method="post" enctype="multipart/form-data">
+            Select image to upload:
+            <input type="file" name="fileToUpload" id="fileToUpload">
+            <input type="submit" value="Upload Image" name="submit">
+        </form>
+    </body>
+    <script src="js/jquery.js"></script>
+    <script>
+        function getTimeSpan() {
+            $.ajax({
+                url: "/ajax/handler?action=get_time_span",
+                type: "post",
+                data: { date: "2013-03-14" },
+                success: function (result) {
+                    var data = JSON.parse(result);
+                    var date = parseInt(data.content.time_span);
+                    alert(date / 1000 / 60 / 60 / 24 / 30 / 12);
+                },
+                error: function () {
+                    alert("errors");
+                }
+            })
+        }
+        
+        function setSession() {
+            $.ajax({
+                url: "/ajax/handler?action=set_session",
+                type: "get",
+                success: function (result) {
+                    alert(result);
+                },
+                error: function () {
+                    alert("errors");
+                }
+            });
+        }
+        
+        function resetSession() {
+            $.ajax({
+                url: "/ajax/handler?action=reset_session",
+                type: "get",
+                success: function (result) {
+                    alert(result);
+                },
+                error: function () {
+                    alert("errors");
+                }
+            });
+        }
+        
+        function getSession() {
+            $.ajax({
+                url: "/ajax/handler?action=get_session",
+                type: "get",
+                success: function (result) {
+                    alert(result);
+                },
+                error: function () {
+                    alert("errors");
+                }
+            });
+        }
+    </script>
+</html>

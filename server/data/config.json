@@ -1,0 +1,19 @@
+{
+    "app_name": "Liby.me",
+    
+    "public_port": 8080,
+    
+    "public_path": "../public/",
+    "public_default_page": "index.html",
+    "public_404_page": "404.html",
+    
+    "cookie_name": "session",
+    "cookie_secret": "317CEA2F-B3F1-0A1F-64BE",
+    "cookie_duration": 1800000,
+    "cookie_active_duration": 300000,
+    
+    "mysql_host": "127.0.0.1",
+    "mysql_user": "root",
+    "mysql_password": "Bionicle-120",
+    "mysql_database": "Liby"
+}
